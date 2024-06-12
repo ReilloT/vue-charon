@@ -26,19 +26,12 @@ export default{
 .el-header{
   text-align: center;
 }
-.el-main{
-  min-height: 560px;
-  /* text-align: center; */
-  /* display: flex;
-  justify-content: center; 
-  align-items: center; */
-  
-}
 .common-layout{
-  background-image: url(./assets/app-bg.png);
+  margin: 0px;
+  /* background-image: url(./assets/app-bg.png);
   background-position: center;
-  background-size: cover;
+  background-size: 100% auto;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: fixed; */
 }
 </style>

@@ -1,12 +1,16 @@
 <template>
-    <el-card style="max-width: 480px">
+  <el-card>
     <template #header>
       <div class="card-header">
         <el-row :gutter="20">
-          <el-col :span="18">
+          <el-col :span="6">
             <el-link type="default">标题</el-link>
           </el-col>
           <el-col :span="3">
+            <el-button type="primary" plain>置顶</el-button>
+          </el-col>
+          <el-col :span="3" :offset="9">
+            <el-icon><View /></el-icon>
             <div class="grid-content ep-bg-purple">看过</div>
           </el-col>
           <el-col :span="3">
@@ -57,7 +61,7 @@ export default{
 
 <style scoped>
 .el-card{
-  margin-left: 40%;
+  margin-left: 30%;
   margin-right: 20%;
 }
 .el-link{
