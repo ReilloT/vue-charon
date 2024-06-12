@@ -3,7 +3,7 @@
     <GoTop></GoTop>
     <div class="common-layout">
       <el-container>
-        <el-header>Header</el-header>
+        <el-header></el-header>
         <el-divider />
         <el-main>
           <RouterView></RouterView>
@@ -28,14 +28,17 @@ export default{
 }
 .el-main{
   min-height: 560px;
-  text-align: center;
-  display: flex;
+  /* text-align: center; */
+  /* display: flex;
   justify-content: center; 
-  align-items: center;
+  align-items: center; */
   
 }
 .common-layout{
-  background: url(./assets/app-bg.png) no-repeat center center;
+  background-image: url(./assets/app-bg.png);
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 </style>
