@@ -31,7 +31,7 @@
       </el-col>
     </el-row>
 
-    <el-row :gutter="20">
+    <el-row class="fotter":gutter="20">
       <el-col :span="3">
         {{ author }}
       </el-col>
@@ -39,7 +39,8 @@
         <el-tag type="primary" v-for="tag in tags" :key="tag.tagname">{{ tag.tagname }}</el-tag>
       </el-col>
       <el-col :span="9">
-        {{createDate | format}}
+        <el-icon><i-ep-Clock /></el-icon>
+        {{ $filter.formateDate(createDate) }}
       </el-col>
     </el-row>
   </el-card>
@@ -49,7 +50,6 @@
 export default{
   name:"ArticleItem",
   props: {
-  
     id: String,
     weight: Number,
     title: String,
@@ -59,7 +59,6 @@ export default{
     author: String,
     tags: Array,
     createDate: String
-  
   },
   methods:{
     routerTo(id){
@@ -72,8 +71,8 @@ export default{
 
 <style scoped>
 .el-card{
-  margin-left: 30%;
-  margin-right: 20%;
+  margin-left: 20%;
+  margin-right: 10%; 
 }
 .el-link{
   font-size: x-large;
@@ -94,5 +93,9 @@ export default{
 
 .article-item-title{
   font-size: larger;
+}
+.fotter{
+  margin-top: 15px;
+  margin-bottom: -10px;
 }
 </style>

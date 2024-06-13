@@ -27,7 +27,6 @@ export default{
   text-align: center;
 }
 .common-layout{
-  margin: 0px;
   /* background-image: url(./assets/app-bg.png);
   background-position: center;
   background-size: 100% auto;

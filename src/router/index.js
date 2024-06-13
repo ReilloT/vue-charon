@@ -9,7 +9,7 @@ const routes = [
   {
     path: "/blog",
     name: "blog",
-    component:()=>import("@/views/BlogIndex.vue")
+    component:()=>import("@/views/blog/BlogIndex.vue")
   }
 ]
 
