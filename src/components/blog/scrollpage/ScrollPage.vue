@@ -1,14 +1,7 @@
 <template>
     <div ref="scroll" id="scroll-page" style="overflow: hidden">
         <slot></slot>
-
         <el-table v-loading="loading" style="width: 100%"></el-table>
-        <!-- <div
-        style="height: 40px;margin-top: 10px;z-index: 1"
-        v-loading="loading"
-        element-loading-text="拼命加载中"
-        element-loading-spinner="el-icon-loading"
-        element-loading-background="rgba(245,245,245)"></div> -->
   </div>
 </template>
 

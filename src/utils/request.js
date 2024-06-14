@@ -37,7 +37,7 @@ const errorHandle = (status,info)=>{
 }
 
 const instance  = axios.create({
-    timout:5000;
+    timout:5000
 })
 
 instance.interceptors.request.use(
@@ -48,7 +48,7 @@ instance.interceptors.request.use(
         return config;
     },
     error=>{
-        Promise.inject(config);
+        Promise.reject(config);
     }
 )
 

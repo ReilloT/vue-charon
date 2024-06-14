@@ -7,7 +7,7 @@
 <script>
 import ScrollPage from "@/components/blog/scrollpage/ScrollPage.vue";
 import ArticleItem from "@/components/blog/article/ArticleItem.vue";
-
+import api from "@/api"
 export default{
     components:{
         ScrollPage,ArticleItem
@@ -17,38 +17,14 @@ export default{
     },
     data(){
         return{
-            loading:true,
-            noData:true,
+            loading:false,
+            noData:false,
             offset:0,
-
-
-
-            //测试数据
-            articles:[
-                {
-                    id: "1",
-                    weight: 1,
-                    title: "<<天后>>",
-                    commentCounts: 13,
-                    viewCounts: 14,
-                    summary: "我嫉妒你的爱气势如虹",
-                    author: "charon",
-                    tags: [{"tagname":"歌曲"},{"tagname":"陈势安"}],
-                    createDate: "2023-03-05 16:00"
-                },
-                {
-                    id: "2",
-                    weight: 0,
-                    title: "<<煎熬>>",
-                    commentCounts: 5,
-                    viewCounts: 6,
-                    summary: "心一跳，爱就开始煎熬",
-                    author: "pluto",
-                    tags: [{"tagname":"歌曲"},{"tagname":"李佳薇"}],
-                    createDate: "2024-06-13 18:00"
-                },
-
-            ]
+            articles:[],
+            articlesParam:{
+                page:1,
+                pageSize:10
+            }
 
         }
     },
@@ -61,20 +37,24 @@ export default{
             //定义that方便异步
             let that = this;
             that.loading = true;
-            //测试数据
-            that.articles = that.articles.concat({
-                    id: "1",
-                    weight: 1,
-                    title: "<<天后>>",
-                    commentCounts: 13,
-                    viewCounts: 14,
-                    summary: "我嫉妒你的爱气势如虹",
-                    author: "charon",
-                    tags: [{"tagname":"歌曲"},{"tagname":"陈势安"}],
-                    createDate: "2023-03-05 16:00"
-                });
-            that.loading = false;
+            //发送请求
+            api.getArticles(that.articlesParam).then(
+                res=>{
+                    if(res.data.success){
+                        if (res.data.data.length <= 0) {
+                            that.noData = true;
+                        }
+                        that.articles = that.articles.concat(res.data.data);
+                    }else{
+                        Promise.reject(res.data.msg)
+                    }
+                }).catch((err)=>{
+                    Promise.reject("获取文章列表失败")
+                }).finally(()=>{
+                    that.loading = false;
+                })
 
+            that.loading = false;
             that.noData = false;
         }
     },

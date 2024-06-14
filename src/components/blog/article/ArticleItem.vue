@@ -70,32 +70,17 @@ export default{
 </script>
 
 <style scoped>
-.el-card{
-  margin-left: 20%;
-  margin-right: 10%; 
-}
 .el-link{
   font-size: x-large;
 }
-
-.view-counts{
-  text-align: right;
-  vertical-align: middle;
-}
-
 .article-item{
-  margin-top: 10px
+  margin-bottom: 10px;
 }
-
 .el-tag{
   margin-right: 2px;
 }
 
 .article-item-title{
   font-size: larger;
-}
-.fotter{
-  margin-top: 15px;
-  margin-bottom: -10px;
 }
 </style>

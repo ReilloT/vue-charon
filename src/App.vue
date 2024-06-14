@@ -2,13 +2,11 @@
   <div class="home-app">
     <GoTop></GoTop>
     <div class="common-layout">
-      <el-container>
-        <el-header></el-header>
-        <el-divider />
+      <!-- <el-container> -->
         <el-main>
           <RouterView></RouterView>
         </el-main>
-      </el-container>
+      <!-- </el-container> -->
     </div>
   </div>
 </template>
@@ -23,9 +21,6 @@ export default{
 </script>
 
 <style scoped>
-.el-header{
-  text-align: center;
-}
 .common-layout{
   /* background-image: url(./assets/app-bg.png);
   background-position: center;
