@@ -1,16 +1,21 @@
+import path from '@/api/path';
 import { createRouter, createWebHashHistory } from 'vue-router'
+import BlogHome from "@/views/BlogHome.vue"
 
 const routes = [
   {
-    path: "/",
-    name: "home",
-    component:()=>import("@/views/Index.vue")
+    path:"",
+    name:"blogHome",
+    component:BlogHome,
+    // redirect:"/",
+    children:[
+      {
+        path: "/",
+        name: "basemain",
+        component: ()=>inmport("@/views/blog/BaseMain.vue"),
+      }
+    ],
   },
-  {
-    path: "/blog",
-    name: "blog",
-    component:()=>import("@/views/blog/BlogIndex.vue")
-  }
 ]
 
 const router = createRouter({

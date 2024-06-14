@@ -5,8 +5,9 @@
 </template>
 
 <script>
-import ScrollPage from "@/components/blog/scrollpage/ScrollPage.vue";
-import ArticleItem from "@/components/blog/article/ArticleItem.vue";
+import ScrollPage from "@/components/scrollpage/ScrollPage.vue";
+import ArticleItem from "@/components/article/ArticleItem.vue"
+
 import api from "@/api"
 export default{
     components:{
@@ -46,7 +47,7 @@ export default{
                         }
                         that.articles = that.articles.concat(res.data.data);
                     }else{
-                        Promise.reject(res.data.msg)
+                        // Promise.reject(res.data.msg)
                     }
                 }).catch((err)=>{
                     Promise.reject("获取文章列表失败")
@@ -62,5 +63,12 @@ export default{
 </script>
 
 <style scoped>
+  .el-card {
+    border-radius: 0;
+  }
 
+  .el-card:not(:first-child) {
+    margin-top: 10px;
+
+  }
 </style>

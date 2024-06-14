@@ -7,10 +7,10 @@ const errorHandle = (status,info)=>{
             console.log("表示服务器已经成功处理了部分GET请求")
             break;
         case 301:
-            console.log("请求的网页已永久移动到新位置，请求的URI资源路径已经改变");
+            console.log("请求的网页已永久移动到新位置,请求的URI资源路径已经改变");
             break;
         case 302:
-            console.log("请求的网页已临时移动到新位置，请求的URI资源路径已经改变");
+            console.log("请求的网页已临时移动到新位置,请求的URI资源路径已经改变");
             break;
         case 400:
             console.log("服务器无法理解该请求");
